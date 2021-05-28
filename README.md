@@ -11,10 +11,13 @@ If the browser outside Docker shows `ERR_RESET_CONNECTION`, add to `angular.json
   "options": {
     "browserTarget": "my-app:build",
     "port": 4200,
-    "host": "0.0.0.0"
+    "host": "0.0.0.0",
+    "poll": 2000
   },
   ...
 }`
+
+For docker in Windows: `ng serve --pool=2000` to force watch files changes
 
 
 ## Stop a previous process
