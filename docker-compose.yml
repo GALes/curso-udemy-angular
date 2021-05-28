@@ -2,15 +2,13 @@ version: '3.5'
 
 services:
   node:
-    container_name: node
-    build:  
-      context: ./docker/node
-    ports: 
-      - "8888:8081"
+    image: "node:16"
+    user: "node"
     working_dir: /home/node/app
     environment:
       - NODE_ENV=production
     volumes:
       - ./:/home/node/app
+    ports:
+      - "3003:3003"
     command: "npm start"
-

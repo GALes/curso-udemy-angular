@@ -5,4 +5,4 @@ ENV http_proxy "http://10.7.6.219:3128"
 ENV https_proxy "http://10.7.6.219:3128"
 
 # replace this with your application's default port
-EXPOSE 8888
+EXPOSE 3000
