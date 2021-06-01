@@ -14,6 +14,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { HeroesResultComponent } from './components/heroes-result/heroes-result.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +24,14 @@ import { HeroeComponent } from './components/heroe/heroe.component';
     HomeComponent,
     AboutComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    HeroesResultComponent
   ],
-  imports: [
-    BrowserModule,
-    APP_ROUTING
-  ],
+    imports: [
+        BrowserModule,
+        APP_ROUTING,
+        ReactiveFormsModule
+    ],
   providers: [
     HeroesService
   ],
