@@ -1,27 +1,10 @@
-# Spa
+# MyNg11App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.13.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-If the browser outside Docker shows `ERR_RESET_CONNECTION`, add to `angular.json` 
-`"serve": {
-  ...
-  "options": {
-    "browserTarget": "my-app:build",
-    "port": 4200,
-    "host": "0.0.0.0",
-    "poll": 2000
-  },
-  ...
-}`
-
-For docker in Windows: `ng serve --pool=2000` to force watch files changes
-
-
-## Stop a previous process
-To stop a previous process that can't be killed by `Ctrl+C`, use command `ps -ef | grep "ng serve"` and then `kill <pid>`
 
 ## Code scaffolding
 
@@ -37,7 +20,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 

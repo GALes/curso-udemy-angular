@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {Heroe, HeroesService} from "../../services/heroes.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Heroe, HeroesService } from "../../services/heroes.service";
+import { Toast } from "node_modules/bootstrap/dist/js/bootstrap.esm.js";
 
 @Component({
   selector: 'app-heroes-result',
@@ -11,7 +12,7 @@ export class HeroesResultComponent implements OnInit {
 
   public heroes:Heroe[] = [];
 
-  constructor(
+  constructor (
     private _heroesService:HeroesService,
     private router:Router,
     private activatedRoute:ActivatedRoute
@@ -22,7 +23,15 @@ export class HeroesResultComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       console.log(params)
       this.heroes = this._heroesService.buscarHeroes(params['termino'])
+
+      console.log(this.heroes.length);
+      if ( this.heroes.length == 0 ) {
+
+        // Array.from(document.querySelectorAll('.toast'))
+        //   .forEach(toastNode => new Toast(toastNode))
+      }
     })
+
   }
 
   verHeroe( idx:number ) {
