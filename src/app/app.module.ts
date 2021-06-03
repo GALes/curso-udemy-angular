@@ -16,7 +16,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HeroesResultComponent } from './components/heroes-result/heroes-result.component';
-import {NgbToastModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbToastModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 
 @NgModule({
@@ -34,7 +34,8 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
     BrowserModule,
     APP_ROUTING,
     ReactiveFormsModule,
-    NgbToastModule
+    NgbToastModule,
+    NgbModule
   ],
   providers: [
     HeroesService

@@ -24,12 +24,9 @@ export class HeroesResultComponent implements OnInit {
       console.log(params)
       this.heroes = this._heroesService.buscarHeroes(params['termino'])
 
-      console.log(this.heroes.length);
-      if ( this.heroes.length == 0 ) {
-
-        // Array.from(document.querySelectorAll('.toast'))
-        //   .forEach(toastNode => new Toast(toastNode))
-      }
+      // Utilizando una libreria como si fuera Javascript
+      // Array.from(document.querySelectorAll('.toast'))
+      //   .forEach(toastNode => new Toast(toastNode))
     })
 
   }
