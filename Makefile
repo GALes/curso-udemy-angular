@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = spa-web
+DOCKER_BE = pipes-web
 
 OS := $(shell uname)
 
@@ -26,7 +26,7 @@ restart: ## Restart the containers
 	$(MAKE) stop && $(MAKE) run
 
 build: ## Rebuilds all the containers
-	docker-compose stop && docker-compose build && docker compose up
+	docker-compose stop && docker-compose build && $(MAKE) run
 
 ssh-be-root: ## ssh's into the be container
 	docker exec -it --user 0 ${DOCKER_BE} bash

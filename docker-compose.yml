@@ -3,20 +3,10 @@ services:
     pipes-web:
         container_name: pipes-web
         build: ./docker/apache72nodejs
-        environment:
-            - TERM=${TERM}
-            - XDEBUG_CONFIG=remote_host=host.docker.internal
-            - PHP_IDE_CONFIG=serverName=localhost # for console debugging
         ports:
-            - "83:80"
-            - "446:443"
             - "3000:3000"
             - "4200:4200"
-            - "9003:9003"
         volumes:
-            - ${SYMFONY_APP_PATH}:/var/www/html            
-        stdin_open: true # docker run -i
+            - ./:/var/www/html
         tty: true        # docker run -t
-    
-
-    
+        stdin_open: true # docker run -i
