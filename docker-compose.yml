@@ -1,7 +1,7 @@
 version: '3.5'
 services:
-    pipes-web:
-        container_name: pipes-web
+    spotiapp-web:
+        container_name: spotiapp-web
         build: ./docker/apache72nodejs
         ports:
             - "3000:3000"

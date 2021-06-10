@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = pipes-web
+DOCKER_BE = spotiapp-web
 
 OS := $(shell uname)
 
