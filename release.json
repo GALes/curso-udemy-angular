@@ -1,0 +1,47 @@
+{
+  "album_type": "single",
+  "artists": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/4V8LLVI7PbaPR0K2TGSxFF"
+      },
+      "href": "https://api.spotify.com/v1/artists/4V8LLVI7PbaPR0K2TGSxFF",
+      "id": "4V8LLVI7PbaPR0K2TGSxFF",
+      "name": "Tyler, The Creator",
+      "type": "artist",
+      "uri": "spotify:artist:4V8LLVI7PbaPR0K2TGSxFF"
+    }
+  ],
+  "available_markets": [
+    "AD",
+    "AE"
+  ],
+  "external_urls": {
+    "spotify": "https://open.spotify.com/album/4FUZ2K8iROpZzhWjusmH9e"
+  },
+  "href": "https://api.spotify.com/v1/albums/4FUZ2K8iROpZzhWjusmH9e",
+  "id": "4FUZ2K8iROpZzhWjusmH9e",
+  "images": [
+    {
+      "height": 640,
+      "url": "https://i.scdn.co/image/ab67616d0000b273e1bcb03317aabee4e0ca1193",
+      "width": 640
+    },
+    {
+      "height": 300,
+      "url": "https://i.scdn.co/image/ab67616d00001e02e1bcb03317aabee4e0ca1193",
+      "width": 300
+    },
+    {
+      "height": 64,
+      "url": "https://i.scdn.co/image/ab67616d00004851e1bcb03317aabee4e0ca1193",
+      "width": 64
+    }
+  ],
+  "name": "LUMBERJACK",
+  "release_date": "2021-06-16",
+  "release_date_precision": "day",
+  "total_tracks": 1,
+  "type": "album",
+  "uri": "spotify:album:4FUZ2K8iROpZzhWjusmH9e"
+}

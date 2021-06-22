@@ -1,0 +1,39 @@
+{
+  "external_urls": {
+    "spotify": "https://open.spotify.com/artist/5XJDexmWFLWOkjOEjOVX3e"
+  },
+  "followers": {
+    "href": null,
+    "total": 486353
+  },
+  "genres": [
+    "reggaeton",
+    "reggaeton flow",
+    "trap boricua",
+    "trap latino",
+    "trap triste"
+  ],
+  "href": "https://api.spotify.com/v1/artists/5XJDexmWFLWOkjOEjOVX3e",
+  "id": "5XJDexmWFLWOkjOEjOVX3e",
+  "images": [
+    {
+      "height": 640,
+      "url": "https://i.scdn.co/image/9c7007f0a037bee38b4ae8d10c96391983b8cfd9",
+      "width": 640
+    },
+    {
+      "height": 320,
+      "url": "https://i.scdn.co/image/506e5eec4c6d83c6eb42d54a583f49bd2c6d2e89",
+      "width": 320
+    },
+    {
+      "height": 160,
+      "url": "https://i.scdn.co/image/fe4a2f4c4b55dfa4974ab2fbac63508ed3445dcb",
+      "width": 160
+    }
+  ],
+  "name": "Eladio Carrion",
+  "popularity": 79,
+  "type": "artist",
+  "uri": "spotify:artist:5XJDexmWFLWOkjOEjOVX3e"
+}
