@@ -1,20 +1,12 @@
+
 <div class="row mb-5">
   <div class="col">
     <input #termino type="text" (keyup)="search(termino.value)" class="form-control" placeholder="artista">
   </div>
 </div>
 
-<div class="card-columns">
-  <div *ngFor="let artista of artistas" class="card">
-    <img [src]="artista.images[0].url" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"> {{ artista.name }} </h5>
-
-      <p><small *ngFor="let genero of artista.genres" class="text-muted">
-          {{ genero | titlecase }}
-        </small>
-      </p>
-    </div>
-  </div>
-
+<div>
+  <app-loading [loading]="loading">
+    <app-card [items]="artistas"></app-card>
+  </app-loading>
 </div>

@@ -1,20 +1,4 @@
-<div class="card-columns">
-  <div *ngFor="let newRelease of newReleases" class="card">
-    <img [src]="newRelease.images[0].url" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title"> {{ newRelease.name }} </h5>
-      <ul class="card-text">
-        <li *ngFor="let artist of newRelease.artists">
-          <p>{{ artist.name }} <span class="badge badge-info">{{ artist.type | titlecase }}</span></p>
-        </li>
-      </ul>
-
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          {{ newRelease.type | titlecase}} released in {{ newRelease.release_date | date }}
-        </small>
-      </footer>
-    </div>
-  </div>
-
-</div>
+<app-loading [loading]="loading">
+  <app-card [items]="newReleases"></app-card>
+</app-loading>
+|

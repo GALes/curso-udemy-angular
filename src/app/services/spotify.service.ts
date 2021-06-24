@@ -1,33 +1,38 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpotifyService {
 
-  private autorizationToken = 'Bearer BQD-SKwZfftwpL-huEOK6blxSKRZlnDyWy5JL8SSQ64AzbtTJ3HLHc40pRTvJKvuSclDjVvneZOwHx8NRfiwETkbh-J3I0r-dv-ECxvK2SYfzI9HoSdq9rrHBg02e71nGqrWcuVx3IVM5ZJuN0ZzqIYjQJ0PdNA';
-  protected headers: HttpHeaders;
+  private baseUrl = 'https://api.spotify.com/v1/';
+  private autorizationToken = 'Bearer BQBycCDFkPlONuu-zzwLaeMGJBjYE9orWAQVhS5VX-O1LeNQVBIVQ3BvPxq-Q6hYg3MLZj9UHuM9_ocqd_I3E1rpRiwzQPdpriQMLPiA3tAL8-JC89U7LA-b71u9HCNloBdanxZOl_mPF72j4crladpk5YZN0K0';
+
+  getQuery(query: string): any {
+    const url = this.baseUrl + query;
+    const headers: HttpHeaders = new HttpHeaders({
+      Authorization: this.autorizationToken
+    });
+    return this.http.get(url, { headers });
+  }
 
   constructor(
     private http: HttpClient
-  ) {
-    this.headers = new HttpHeaders({
-      Authorization: this.autorizationToken
-    });
-  }
+  ) {  }
 
   getNewReleases(): Observable<any>
   {
-    const headers = this.headers;
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers });
+    return this.getQuery(`browse/new-releases?limit=50`)
+      .pipe(map((data: any) => data.albums.items ));
   }
 
   search(termino: string): Observable<any>
   {
-    const headers = this.headers;
-    return this.http.get(`https://api.spotify.com/v1/search?query=${ termino }&type=artist&offset=0&limit=20`, { headers });
+    return this.getQuery(`search?query=${ termino }&type=artist&offset=0&limit=50`)
+      .pipe(map((data: any) => data.artists.items ));
   }
 
 }
