@@ -1,4 +1,8 @@
-<app-loading [loading]="loading">
+<div *ngIf="error" class="alert alert-danger">
+  <h3>Error</h3>
+  <p>{{ errorMessage }}</p>
+</div>
+<app-loading [loading]="loading" class="mt-3">
   <app-card [items]="newReleases"></app-card>
 </app-loading>
 |

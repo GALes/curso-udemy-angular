@@ -15,6 +15,7 @@ import {ROUTES} from './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardComponent } from './components/shared/card/card.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { WidgetUriPipe } from './pipes/widget-uri.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     NoimagePipe,
     CardComponent,
-    LoadingComponent
+    LoadingComponent,
+    WidgetUriPipe
   ],
   imports: [
     BrowserModule,
