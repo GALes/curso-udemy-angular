@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y \
         vim \
         curl \
         build-essential \
-        sudo
+        sudo \
+        lsof
 
 # Instalacion de nvm y nodejsrun.sh
 ADD installNVM.sh /installNVM.sh
