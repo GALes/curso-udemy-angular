@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = spotiapp-web
+DOCKER_BE = toDo-web
 
 OS := $(shell uname)
 

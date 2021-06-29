@@ -1,11 +1,12 @@
 version: '3.5'
 services:
     spotiapp-web:
-        container_name: base-web
+        container_name: toDo-web
         build: ./docker/apache72nodejs
         ports:
             - "3000:3000"
             - "4200:4200"
+            - "8100:8100"
         volumes:
             - ./:/var/www/html
         tty: true        # docker run -t

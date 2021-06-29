@@ -40,7 +40,7 @@ CMD ["/installNVM.sh"]
 #RUN npm install -g @angular/cli@11
 #RUN npm install -g ionic
 
-EXPOSE 3000 4200
+EXPOSE 3000 4200 8100
 
 # Set the entry directory
 WORKDIR /var/www/html
