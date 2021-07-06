@@ -24,6 +24,7 @@ export class AgregarPage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   agregarItem () {
@@ -33,6 +34,27 @@ export class AgregarPage implements OnInit {
     const nuevoItem = new ListaItem(this.nombreItem);
     this.lista.items.push(nuevoItem);
     this.nombreItem = '';
+    this.todosService.guardarStorage();
+  }
+
+  cambioCheck(item: ListaItem) {
+    const pendientes = this.lista.pendientes;
+
+    if (pendientes === 0) {
+      this.lista.terminada = true;
+      this.lista.terminadaEn = new Date();
+    }
+    else {
+      this.lista.terminada = false;
+      this.lista.terminadaEn = null;
+    }
+
+    this.todosService.guardarStorage();
+    console.log({lista: this.lista});
+  }
+
+  borrar (i: number) {
+    this.lista.items.splice(i, 1);
     this.todosService.guardarStorage();
   }
 

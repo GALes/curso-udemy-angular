@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../../explore-container/explore
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import {TodosService} from "../../services/todos.service";
+import {ComponentsModule} from "../../components/components.module";
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {TodosService} from "../../services/todos.service";
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab2PageRoutingModule
+    Tab2PageRoutingModule,
+    ComponentsModule,
   ],
   declarations: [Tab2Page]
 })

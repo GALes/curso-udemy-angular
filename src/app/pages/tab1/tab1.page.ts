@@ -57,4 +57,9 @@ export class Tab1Page {
     await alert.present();
     // this.router.navigateByUrl('/tabs/tab1/agregar')
   }
+
+  editarLista(lista: Lista) {
+    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`)
+  }
+
 }

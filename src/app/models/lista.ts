@@ -16,4 +16,17 @@ export class Lista {
 
     this.id = new Date(). getTime();
   }
+
+  get pendientes(): number {
+    return this.items
+                .filter(itemData => !itemData.completado )
+                .length;
+  }
+
+  pend(): number {
+    return this.items
+      .filter(itemData => !itemData.completado )
+      .length;
+  }
+
 }
