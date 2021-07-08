@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Lista} from "../../models/lista";
 import {TodosService} from "../../services/todos.service";
 import {Router} from "@angular/router";
+import {AlertController, IonList} from "@ionic/angular";
 
 @Component({
   selector: 'app-listas',
@@ -10,13 +11,15 @@ import {Router} from "@angular/router";
 })
 export class ListasComponent implements OnInit {
 
-  @Input() terminada = true;
+  @ViewChild(IonList) ionLista: IonList;
+  @Input() terminada:boolean;
 
   public listas: Lista[];
 
   constructor(
     public todosService: TodosService,
     private router: Router,
+    private alertController: AlertController
   ) {
     this.listas = todosService.listas;
   }
@@ -37,4 +40,44 @@ export class ListasComponent implements OnInit {
     this.todosService.guardarStorage();
   }
 
+  async editarNombre(id: number) {
+    let lista = this.todosService.obtenerLista(id);
+    console.log('edicion')
+
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Cambiar nombre de lista',
+      inputs: [
+        {
+          name: 'titulo',
+          type: 'text',
+          value: lista.titulo,
+          placeholder: 'Nombre de la lista'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            console.log('cancelado')
+          }
+        },
+        {
+          text: 'Aceptar',
+          handler: (data) => {
+            console.log(data);
+            if (data.titulo.length > 0) {
+              lista.titulo = data.titulo;
+              this.todosService.guardarStorage();
+              this.ionLista.closeSlidingItems;
+            }
+            return;
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
 }

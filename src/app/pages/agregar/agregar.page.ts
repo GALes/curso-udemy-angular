@@ -38,7 +38,9 @@ export class AgregarPage implements OnInit {
   }
 
   cambioCheck(item: ListaItem) {
-    const pendientes = this.lista.pendientes;
+    const pendientes = this.lista.items
+      .filter(itemData => !itemData.completado )
+      .length;
 
     if (pendientes === 0) {
       this.lista.terminada = true;
@@ -50,7 +52,6 @@ export class AgregarPage implements OnInit {
     }
 
     this.todosService.guardarStorage();
-    console.log({lista: this.lista});
   }
 
   borrar (i: number) {
