@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = spotiapp-web
+DOCKER_BE = miselaneos-web
 
 OS := $(shell uname)
 

@@ -1,0 +1,24 @@
+<div [ngClass]="alertType" class="alert " role="alert">
+  A simple primary alert—check it out!
+</div>
+
+<button type="button" class="btn btn-info m-1" (click)="alertType = 'alert-info'">Info</button>
+<button type="button" class="btn btn-success m-1" (click)="alertType = 'alert-success'">Success</button>
+
+<br> <br>
+
+<h3 [ngClass]="{ 'text-danger': mundoEnPeligro, 'text-info': !mundoEnPeligro }">
+  Hola Mundo!!
+</h3>
+
+<hr>
+
+<h3>Proceso asincrono</h3>
+<button
+  class="btn btn-primary"
+  type="button" name="button"
+  (click)="procesar()"
+  [disabled]="procesando"
+>
+  <fa-icon [icon]="procesando ? faSync : faSave" [spin]="procesando"></fa-icon> {{ !procesando ? 'Guardar' : 'Guardando...' }}
+</button>
