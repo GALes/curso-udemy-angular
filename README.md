@@ -1,13 +1,10 @@
-# Spotiapp
+# Authapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Delete server on port 4200
-    kill -9 $(sudo lsof -t -i:4200)
 
 ## Code scaffolding
 

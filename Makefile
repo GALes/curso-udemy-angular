@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOCKER_BE = spotiapp-web
+DOCKER_BE = authapp-web
 
 OS := $(shell uname)
 
